@@ -1,0 +1,74 @@
+@import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+:root {
+  --fonte-familia-corpo: 'Montserrat', sans-serif;
+  --fonte-familia-logo: 'Pacifico', cursive;
+
+  --fonte-peso-input: 300;
+
+  --fonte-tamanho-logo: 28px;
+  --fonte-tamanho-cartao-titulo: 28px;
+  --fonte-tamanho-input-label: 20px;
+  --fonte-tamanho-botao: 22px;
+  --fonte-tamanho-formulario-fieldset: 22px;
+  --fonte-tamanho-tabela-cabecalho: 22px;
+  --fonte-tamanho-modal-titulo: 28px;
+  --fonte-tamanho-modal-botao: 28px;
+  
+  --cor-primaria: #0071ea;
+  --cor-secundaria: #d6eaff;
+  --cor-contraste-escuro: #4D4D4D;
+  --cor-contraste-claro: #fff;
+  --cor-aviso: #df2525;
+  --cor-sucesso: #047900;
+  --cor-transparencia: #4d4d4d33;
+
+  --sombra: 0 5px 10px #55a6ff38;
+}
+
+
+body {
+	background-color: var(--cor-secundaria);
+	color: var(--cor-contraste-escuro);
+	font-family: var(--fonte-familia-corpo);
+	overflow-x: hidden;
+}
+
+.container { 
+	padding-right: 1rem;
+	padding-left: 1rem;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex--centro {
+	align-items: center;
+	justify-content: center;
+}
+
+.flex--coluna {
+	flex-direction: column;
+}
+
+@media(min-width: 800px) {
+  .container {
+		padding-right: 2.5rem;
+		padding-left: 2.5rem;	
+	}
+}
+
+@media(min-width: 1200px) {
+	.container {
+		padding-left: calc((100vw - 900px)/2);
+		padding-right: calc((100vw - 900px)/2);
+	}
+}
+
+@media(min-width: 800px) {
+  :root {
+      --fonte-tamanho-logo: 56px;
+  }
+}
