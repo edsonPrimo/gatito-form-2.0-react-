@@ -26,8 +26,8 @@ function InformacoesPessoais() {
           data-tipo="dataNascimento"
           required
         />
-        <label className="input-label" htmlFor="nascimento">Data de nascimento</label>
-        <span className="input-mensagem-erro">{msgErro}</span>
+        <label className="input-label" htmlFor="nascimento">{msgErro.nascimento}</label>
+        <span className="input-mensagem-erro"></span>
       </div>
       <div className="input-container">
         <input
@@ -44,7 +44,7 @@ function InformacoesPessoais() {
           required
           data-tipo="cpf" />
         <label className="input-label" htmlFor="cpf">CPF</label>
-        <span className="input-mensagem-erro">{msgErro}</span>
+        <span className="input-mensagem-erro">{msgErro.cpf}</span>
       </div>
     </fieldset>
   )

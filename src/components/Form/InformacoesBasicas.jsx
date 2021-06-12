@@ -28,7 +28,7 @@ function InformacoesBasicas() {
           placeholder="Nome"
         />
         <label className="input-label" htmlFor="nome">Nome</label>
-        <span className="input-mensagem-erro">{msgErro}</span>
+        <span className="input-mensagem-erro">{msgErro.nome}</span>
       </div>
       <div className="input-container">
         <input
@@ -45,7 +45,7 @@ function InformacoesBasicas() {
           required
           placeholder="Email" />
         <label className="input-label" htmlFor="email">Email</label>
-        <span className="input-mensagem-erro">{msgErro}`</span>
+        <span className="input-mensagem-erro">{msgErro.email}</span>
       </div>
       <div className="input-container">
         <input
@@ -65,7 +65,7 @@ function InformacoesBasicas() {
           placeholder="Senha"
         />
         <label className="input-label" htmlFor="senha">Senha</label>
-        <span className="input-mensagem-erro">Este campo não está válido</span>
+        <span className="input-mensagem-erro">{msgErro.senha}</span>
       </div>
     </fieldset>
 

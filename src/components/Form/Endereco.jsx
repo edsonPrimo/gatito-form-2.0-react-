@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import Validacoes from '../../context/Validacoes';
+import useErros from '../../hooks/useErros';
 
 function Endereco() {
   const [cep, setCEP] = useState("")
   const [logradouro, setLogradouro] = useState("")
   const [cidade, setCidade] = useState("")
   const [estado, setEstado] = useState("")
+  const validacoes = useContext(Validacoes)
+  const [msgErro, valida] = useErros(validacoes)
   return (
     <fieldset>
       <legend className="formulario__legenda">Endereço</legend>
@@ -14,6 +18,7 @@ function Endereco() {
           onChange={(e) => {
             setCEP(e.target.value)
           }}
+          onBlur={valida}
           name="cep"
           id="cep"
           className="input"
@@ -24,7 +29,7 @@ function Endereco() {
           data-tipo="cep"
         />
         <label className="input-label" htmlFor="cep">CEP</label>
-        <span className="input-mensagem-erro">Este campo não está válido</span>
+        <span className="input-mensagem-erro">{msgErro.cep}</span>
       </div>
       <div className="input-container">
         <input
@@ -32,6 +37,7 @@ function Endereco() {
           onChange={(e) => {
             setLogradouro(e.target.value)
           }}
+          onBlur={valida}
           name="logradouro"
           id="logradouro"
           className="input"
@@ -41,7 +47,7 @@ function Endereco() {
           placeholder="Logradouro"
         />
         <label className="input-label" htmlFor="logradouro">Logradouro</label>
-        <span className="input-mensagem-erro">Este campo não está válido</span>
+        <span className="input-mensagem-erro">{msgErro.logradouro}</span>
       </div>
       <div className="input-container">
         <input
@@ -49,6 +55,7 @@ function Endereco() {
           onChange={(e) => {
             setCidade(e.target.value)
           }}
+          onBlur={valida}
           name="cidade"
           id="cidade"
           className="input"
@@ -58,7 +65,7 @@ function Endereco() {
           placeholder="Cidade"
         />
         <label className="input-label" htmlFor="cidade">Cidade</label>
-        <span className="input-mensagem-erro">Este campo não está válido</span>
+        <span className="input-mensagem-erro">{msgErro.cidade}</span>
       </div>
       <div className="input-container">
         <input
@@ -66,6 +73,7 @@ function Endereco() {
           onChange={(e) => {
             setEstado(e.target.value)
           }}
+          onBlur={valida}
           name="estado"
           id="estado"
           className="input"
@@ -75,7 +83,7 @@ function Endereco() {
           placeholder="Estado"
         />
         <label className="input-label" htmlFor="estado">Estado</label>
-        <span className="input-mensagem-erro">Este campo não está válido</span>
+        <span className="input-mensagem-erro">{msgErro.estado}</span>
 
         <button type="submit" className="botao">Cadastrar</button>
       </div>
